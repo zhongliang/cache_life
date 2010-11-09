@@ -1,0 +1,18 @@
+# SConscript for cache subdirectory
+
+# Import envrionment
+Import('env')
+
+# Now get list of .cpp files
+src_files = Glob('*.cpp')
+
+objs = env.Object(src_files)
+
+bson_objs = SConscript('bson/SConscript')
+
+# specific list of objects for dstbuild
+dst_objs = env.Object(Split("superstl.cpp statelist.cpp"))
+
+ret_objs = [objs + bson_objs, dst_objs]
+
+Return('ret_objs')

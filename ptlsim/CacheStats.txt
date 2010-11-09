@@ -1,0 +1,300 @@
+Binary file build/dstbuild.temp.o matches
+Binary file build/bson_stats.o matches
+build/sim/ptlsim.cpp:  struct CacheStats::cpurequest::count &count_L1I = stats->memory.total.L1I.cpurequest.count;
+build/sim/ptlsim.cpp:  struct CacheStats::cpurequest::count &count_L1D = stats->memory.total.L1D.cpurequest.count;
+build/sim/ptlsim.cpp:  struct CacheStats::cpurequest::count &count_L2 = stats->memory.total.L2.cpurequest.count;
+Binary file build/sim/ptl-qemu.o matches
+Binary file build/sim/ptlsim.o matches
+Binary file build/x86/decode-core.o matches
+Binary file build/x86/ptlhwdef.o matches
+build/dstbuild.temp.cpp:  DataStoreNodeTemplate PerContextDataCacheStats("PerContextDataCacheStats"); {
+build/dstbuild.temp.cpp:    DataStoreNodeTemplate& load = PerContextDataCacheStats("load"); {
+build/dstbuild.temp.cpp:    DataStoreNodeTemplate& fetch = PerContextDataCacheStats("fetch"); {
+build/dstbuild.temp.cpp:    DataStoreNodeTemplate& store = PerContextDataCacheStats("store"); {
+build/dstbuild.temp.cpp:  DataStoreNodeTemplate DataCacheStats("DataCacheStats"); {
+build/dstbuild.temp.cpp:    DataStoreNodeTemplate& load = DataCacheStats("load"); {
+build/dstbuild.temp.cpp:    DataStoreNodeTemplate& missbuf = DataCacheStats("missbuf"); {
+build/dstbuild.temp.cpp:    DataStoreNodeTemplate& prefetch = DataCacheStats("prefetch"); {
+build/dstbuild.temp.cpp:    DataStoreNodeTemplate& lfrq = DataCacheStats("lfrq"); {
+build/dstbuild.temp.cpp:    DataCacheStats.add("total", PerContextDataCacheStats);
+build/dstbuild.temp.cpp:    DataCacheStats.add("vcpu0", PerContextDataCacheStats);
+build/dstbuild.temp.cpp:    DataCacheStats.add("vcpu1", PerContextDataCacheStats);
+build/dstbuild.temp.cpp:    DataCacheStats.add("vcpu2", PerContextDataCacheStats);
+build/dstbuild.temp.cpp:    DataCacheStats.add("vcpu3", PerContextDataCacheStats);
+build/dstbuild.temp.cpp:  DataStoreNodeTemplate CacheStats("CacheStats"); {
+build/dstbuild.temp.cpp:    DataStoreNodeTemplate& cpurequest = CacheStats("cpurequest"); {
+build/dstbuild.temp.cpp:    DataStoreNodeTemplate& snooprequest = CacheStats("snooprequest"); {
+build/dstbuild.temp.cpp:    CacheStats.addint("annul");
+build/dstbuild.temp.cpp:    CacheStats.addint("queueFull");
+build/dstbuild.temp.cpp:    DataStoreNodeTemplate& latency = CacheStats("latency"); {
+build/dstbuild.temp.cpp:    DataStoreNodeTemplate& lat_count = CacheStats("lat_count"); {
+build/dstbuild.temp.cpp:    DataStoreNodeTemplate& mesi_stats = CacheStats("mesi_stats"); {
+build/dstbuild.temp.cpp:  DataStoreNodeTemplate PerCoreCacheStats("PerCoreCacheStats"); {
+build/dstbuild.temp.cpp:    PerCoreCacheStats.add("CPUController", CacheStats);
+build/dstbuild.temp.cpp:    PerCoreCacheStats.add("L1I", CacheStats);
+build/dstbuild.temp.cpp:    PerCoreCacheStats.add("L1D", CacheStats);
+build/dstbuild.temp.cpp:    PerCoreCacheStats.add("L2", CacheStats);
+build/dstbuild.temp.cpp:    PerCoreCacheStats.add("L3", CacheStats);
+build/dstbuild.temp.cpp:      dcache.add("total", DataCacheStats);
+build/dstbuild.temp.cpp:      dcache.add("c0", DataCacheStats);
+build/dstbuild.temp.cpp:      dcache.add("c1", DataCacheStats);
+build/dstbuild.temp.cpp:      dcache.add("c2", DataCacheStats);
+build/dstbuild.temp.cpp:      dcache.add("c3", DataCacheStats);
+build/dstbuild.temp.cpp:      dcache.add("c4", DataCacheStats);
+build/dstbuild.temp.cpp:      dcache.add("c5", DataCacheStats);
+build/dstbuild.temp.cpp:      dcache.add("c6", DataCacheStats);
+build/dstbuild.temp.cpp:      dcache.add("c7", DataCacheStats);
+build/dstbuild.temp.cpp:      memory.add("total", PerCoreCacheStats);
+build/dstbuild.temp.cpp:      memory.add("c0", PerCoreCacheStats);
+build/dstbuild.temp.cpp:      memory.add("c1", PerCoreCacheStats);
+build/dstbuild.temp.cpp:      memory.add("c2", PerCoreCacheStats);
+build/dstbuild.temp.cpp:      memory.add("c3", PerCoreCacheStats);
+build/dstbuild.temp.cpp:      memory.add("c4", PerCoreCacheStats);
+build/dstbuild.temp.cpp:      memory.add("c5", PerCoreCacheStats);
+build/dstbuild.temp.cpp:      memory.add("c6", PerCoreCacheStats);
+build/dstbuild.temp.cpp:      memory.add("c7", PerCoreCacheStats);
+Binary file build/core/oooexec.o matches
+Binary file build/core/branchpred.o matches
+Binary file build/core/ooopipe.o matches
+Binary file build/core/seqcore.o matches
+Binary file build/core/ooocore.o matches
+build/stats.i:// #define per_context_dcache_stats_ref(vcpuid) (*(((PerContextDataCacheStats*)&stats.dcache.vcpu0) + (vcpuid)))
+build/stats.i:struct PerContextDataCacheStats { // rootnode:
+build/stats.i:struct DataCacheStats { // rootnode:
+build/stats.i:  PerContextDataCacheStats total;
+build/stats.i:  PerContextDataCacheStats vcpu0;
+build/stats.i:  PerContextDataCacheStats vcpu1;
+build/stats.i:  PerContextDataCacheStats vcpu2;
+build/stats.i:  PerContextDataCacheStats vcpu3;
+build/stats.i://   PerContextDataCacheStats vcpu4;
+build/stats.i://   PerContextDataCacheStats vcpu5;
+build/stats.i://   PerContextDataCacheStats vcpu6;
+build/stats.i://   PerContextDataCacheStats vcpu7;
+build/stats.i://   PerContextDataCacheStats vcpu8;
+build/stats.i://   PerContextDataCacheStats vcpu9;
+build/stats.i://   PerContextDataCacheStats vcpu10;
+build/stats.i://   PerContextDataCacheStats vcpu11;
+build/stats.i://   PerContextDataCacheStats vcpu12;
+build/stats.i://   PerContextDataCacheStats vcpu13;
+build/stats.i://   PerContextDataCacheStats vcpu14;
+build/stats.i://   PerContextDataCacheStats vcpu15;
+build/stats.i://   PerContextDataCacheStats vcpu16;
+build/stats.i://   PerContextDataCacheStats vcpu17;
+build/stats.i://   PerContextDataCacheStats vcpu18;
+build/stats.i://   PerContextDataCacheStats vcpu19;
+build/stats.i://   PerContextDataCacheStats vcpu20;
+build/stats.i://   PerContextDataCacheStats vcpu21;
+build/stats.i://   PerContextDataCacheStats vcpu22;
+build/stats.i://   PerContextDataCacheStats vcpu23;
+build/stats.i://   PerContextDataCacheStats vcpu24;
+build/stats.i://   PerContextDataCacheStats vcpu25;
+build/stats.i://   PerContextDataCacheStats vcpu26;
+build/stats.i://   PerContextDataCacheStats vcpu27;
+build/stats.i://   PerContextDataCacheStats vcpu28;
+build/stats.i://   PerContextDataCacheStats vcpu29;
+build/stats.i://   PerContextDataCacheStats vcpu30;
+build/stats.i://   PerContextDataCacheStats vcpu31;
+build/stats.i: struct CacheStats{ // rootnode:
+build/stats.i:        CacheStats& operator+=(const CacheStats &rhs) { // operator
+build/stats.i: struct PerCoreCacheStats { // rootnode:
+build/stats.i:  CacheStats CPUController;
+build/stats.i:  CacheStats L1I;
+build/stats.i:  CacheStats L1D;
+build/stats.i:  CacheStats L2;
+build/stats.i:  CacheStats L3;
+build/stats.i:        PerCoreCacheStats& operator+=(const PerCoreCacheStats &rhs) { // operator
+build/stats.i:using Memory::CacheStats;
+build/stats.i:using Memory::PerCoreCacheStats;
+build/stats.i:#define per_dcache_stats_ref(coreid) (*(((DataCacheStats*)&stats->dcache.c0) + (coreid)))
+build/stats.i:#define per_context_dcache_stats_ref(coreid,threadid) (*(((PerContextDataCacheStats*)&(per_dcache_stats_ref(coreid).vcpu0)) + (threadid)))
+build/stats.i:#define per_core_cache_stats_ref(coreid) (*(((PerCoreCacheStats*)&stats->memory.c0) + (coreid)))
+build/stats.i:#define per_core_cache_stats_ref_with_stats(st,coreid) (*(((PerCoreCacheStats*)&st.memory.c0) + (coreid)))
+build/stats.i:  //  DataCacheStats dcache;
+build/stats.i:    DataCacheStats total;
+build/stats.i:    DataCacheStats c0;
+build/stats.i:    DataCacheStats c1;
+build/stats.i:    DataCacheStats c2;
+build/stats.i:    DataCacheStats c3;
+build/stats.i:    DataCacheStats c4;
+build/stats.i:    DataCacheStats c5;
+build/stats.i:    DataCacheStats c6;
+build/stats.i:    DataCacheStats c7;
+build/stats.i://     DataCacheStats c8;
+build/stats.i://     DataCacheStats c9;
+build/stats.i://     DataCacheStats c10;
+build/stats.i://     DataCacheStats c11;
+build/stats.i://     DataCacheStats c12;
+build/stats.i://     DataCacheStats c13;
+build/stats.i://     DataCacheStats c14;
+build/stats.i://     DataCacheStats c15;
+build/stats.i://	  PerCoreCacheStats total;
+build/stats.i://	  PerCoreCacheStats cacheStats[10];
+build/stats.i:    PerCoreCacheStats total;
+build/stats.i:    PerCoreCacheStats c0;
+build/stats.i:    PerCoreCacheStats c1;
+build/stats.i:    PerCoreCacheStats c2;
+build/stats.i:    PerCoreCacheStats c3;
+build/stats.i:    PerCoreCacheStats c4;
+build/stats.i:    PerCoreCacheStats c5;
+build/stats.i:    PerCoreCacheStats c6;
+build/stats.i:    PerCoreCacheStats c7;
+build/stats.i://     PerCoreCacheStats c8;
+build/stats.i://     PerCoreCacheStats c9;
+build/stats.i://     PerCoreCacheStats c10;
+build/stats.i://     PerCoreCacheStats c11;
+build/stats.i://     PerCoreCacheStats c12;
+build/stats.i://     PerCoreCacheStats c13;
+build/stats.i://     PerCoreCacheStats c14;
+build/stats.i://     PerCoreCacheStats c15;
+build/bson_stats.cpp:void add_bson_PerContextDataCacheStats(PerContextDataCacheStats *stats, bson_buffer *bb, const char* obj_name) {
+build/bson_stats.cpp:void add_bson_DataCacheStats(DataCacheStats *stats, bson_buffer *bb, const char* obj_name) {
+build/bson_stats.cpp:  add_bson_PerContextDataCacheStats(&stats->total, bb, "total");
+build/bson_stats.cpp:  add_bson_PerContextDataCacheStats(&stats->vcpu0, bb, "vcpu0");
+build/bson_stats.cpp:  add_bson_PerContextDataCacheStats(&stats->vcpu1, bb, "vcpu1");
+build/bson_stats.cpp:  add_bson_PerContextDataCacheStats(&stats->vcpu2, bb, "vcpu2");
+build/bson_stats.cpp:  add_bson_PerContextDataCacheStats(&stats->vcpu3, bb, "vcpu3");
+build/bson_stats.cpp:void add_bson_CacheStats(CacheStats *stats, bson_buffer *bb, const char* obj_name) {
+build/bson_stats.cpp:void add_bson_PerCoreCacheStats(PerCoreCacheStats *stats, bson_buffer *bb, const char* obj_name) {
+build/bson_stats.cpp:  add_bson_CacheStats(&stats->CPUController, bb, "CPUController");
+build/bson_stats.cpp:  add_bson_CacheStats(&stats->L1I, bb, "L1I");
+build/bson_stats.cpp:  add_bson_CacheStats(&stats->L1D, bb, "L1D");
+build/bson_stats.cpp:  add_bson_CacheStats(&stats->L2, bb, "L2");
+build/bson_stats.cpp:  add_bson_CacheStats(&stats->L3, bb, "L3");
+build/bson_stats.cpp:    add_bson_DataCacheStats(&stats->dcache.total, bb, "total");
+build/bson_stats.cpp:    add_bson_DataCacheStats(&stats->dcache.c0, bb, "c0");
+build/bson_stats.cpp:    add_bson_DataCacheStats(&stats->dcache.c1, bb, "c1");
+build/bson_stats.cpp:    add_bson_DataCacheStats(&stats->dcache.c2, bb, "c2");
+build/bson_stats.cpp:    add_bson_DataCacheStats(&stats->dcache.c3, bb, "c3");
+build/bson_stats.cpp:    add_bson_DataCacheStats(&stats->dcache.c4, bb, "c4");
+build/bson_stats.cpp:    add_bson_DataCacheStats(&stats->dcache.c5, bb, "c5");
+build/bson_stats.cpp:    add_bson_DataCacheStats(&stats->dcache.c6, bb, "c6");
+build/bson_stats.cpp:    add_bson_DataCacheStats(&stats->dcache.c7, bb, "c7");
+build/bson_stats.cpp:    add_bson_PerCoreCacheStats(&stats->memory.total, bb, "total");
+build/bson_stats.cpp:    add_bson_PerCoreCacheStats(&stats->memory.c0, bb, "c0");
+build/bson_stats.cpp:    add_bson_PerCoreCacheStats(&stats->memory.c1, bb, "c1");
+build/bson_stats.cpp:    add_bson_PerCoreCacheStats(&stats->memory.c2, bb, "c2");
+build/bson_stats.cpp:    add_bson_PerCoreCacheStats(&stats->memory.c3, bb, "c3");
+build/bson_stats.cpp:    add_bson_PerCoreCacheStats(&stats->memory.c4, bb, "c4");
+build/bson_stats.cpp:    add_bson_PerCoreCacheStats(&stats->memory.c5, bb, "c5");
+build/bson_stats.cpp:    add_bson_PerCoreCacheStats(&stats->memory.c6, bb, "c6");
+build/bson_stats.cpp:    add_bson_PerCoreCacheStats(&stats->memory.c7, bb, "c7");
+Binary file build/cache/mesiBus.o matches
+Binary file build/cache/cacheController.o matches
+Binary file build/cache/mesiCache.o matches
+Binary file build/cache/dcache.o matches
+Binary file build/cache/cpuController.o matches
+Binary file build/tools/ptlstats matches
+Binary file build/dstbuild.temp matches
+Binary file cache/.dcache.h.swp matches
+cache/dcache.h:// #define per_context_dcache_stats_ref(vcpuid) (*(((PerContextDataCacheStats*)&stats.dcache.vcpu0) + (vcpuid)))
+cache/dcache.h:struct PerContextDataCacheStats { // rootnode:
+cache/dcache.h:struct DataCacheStats { // rootnode:
+cache/dcache.h:  PerContextDataCacheStats total;
+cache/dcache.h:  PerContextDataCacheStats vcpu0;
+cache/dcache.h:  PerContextDataCacheStats vcpu1;
+cache/dcache.h:  PerContextDataCacheStats vcpu2;
+cache/dcache.h:  PerContextDataCacheStats vcpu3;
+cache/dcache.h://   PerContextDataCacheStats vcpu4;
+cache/dcache.h://   PerContextDataCacheStats vcpu5;
+cache/dcache.h://   PerContextDataCacheStats vcpu6;
+cache/dcache.h://   PerContextDataCacheStats vcpu7;
+cache/dcache.h://   PerContextDataCacheStats vcpu8;
+cache/dcache.h://   PerContextDataCacheStats vcpu9;
+cache/dcache.h://   PerContextDataCacheStats vcpu10;
+cache/dcache.h://   PerContextDataCacheStats vcpu11;
+cache/dcache.h://   PerContextDataCacheStats vcpu12;
+cache/dcache.h://   PerContextDataCacheStats vcpu13;
+cache/dcache.h://   PerContextDataCacheStats vcpu14;
+cache/dcache.h://   PerContextDataCacheStats vcpu15;
+cache/dcache.h://   PerContextDataCacheStats vcpu16;
+cache/dcache.h://   PerContextDataCacheStats vcpu17;
+cache/dcache.h://   PerContextDataCacheStats vcpu18;
+cache/dcache.h://   PerContextDataCacheStats vcpu19;
+cache/dcache.h://   PerContextDataCacheStats vcpu20;
+cache/dcache.h://   PerContextDataCacheStats vcpu21;
+cache/dcache.h://   PerContextDataCacheStats vcpu22;
+cache/dcache.h://   PerContextDataCacheStats vcpu23;
+cache/dcache.h://   PerContextDataCacheStats vcpu24;
+cache/dcache.h://   PerContextDataCacheStats vcpu25;
+cache/dcache.h://   PerContextDataCacheStats vcpu26;
+cache/dcache.h://   PerContextDataCacheStats vcpu27;
+cache/dcache.h://   PerContextDataCacheStats vcpu28;
+cache/dcache.h://   PerContextDataCacheStats vcpu29;
+cache/dcache.h://   PerContextDataCacheStats vcpu30;
+cache/dcache.h://   PerContextDataCacheStats vcpu31;
+Binary file cache/.memoryStats.h.swp matches
+cache/cacheController.h:		CacheStats *userStats_;
+cache/cacheController.h:		CacheStats *totalUserStats_;
+cache/cacheController.h:		CacheStats *kernelStats_;
+cache/cacheController.h:		CacheStats *totalKernelStats_;
+cache/dcache-amd-k8.h:#define per_context_dcache_stats_ref(vcpuid) (*(((PerContextDataCacheStats*)&stats.dcache.vcpu0) + (vcpuid)))
+cache/dcache-amd-k8.h:struct PerContextDataCacheStats { // rootnode:
+cache/dcache-amd-k8.h:struct DataCacheStats { // rootnode:
+cache/dcache-amd-k8.h:  PerContextDataCacheStats total;
+cache/dcache-amd-k8.h:  PerContextDataCacheStats vcpu0;
+cache/dcache-amd-k8.h:  PerContextDataCacheStats vcpu1;
+cache/dcache-amd-k8.h:  PerContextDataCacheStats vcpu2;
+cache/dcache-amd-k8.h:  PerContextDataCacheStats vcpu3;
+cache/memoryStats.h:	struct CacheStats{ // rootnode:
+cache/memoryStats.h:        CacheStats& operator+=(const CacheStats &rhs) { // operator
+cache/memoryStats.h:	struct PerCoreCacheStats { // rootnode:
+cache/memoryStats.h:		CacheStats CPUController;
+cache/memoryStats.h:		CacheStats L1I;
+cache/memoryStats.h:		CacheStats L1D;
+cache/memoryStats.h:		CacheStats L2;
+cache/memoryStats.h:		CacheStats L3;
+cache/memoryStats.h:        PerCoreCacheStats& operator+=(const PerCoreCacheStats &rhs) { // operator
+cache/cpuController.h:		CacheStats *userStats_;
+cache/cpuController.h:		CacheStats *totalUserStats_;
+cache/cpuController.h:		CacheStats *kernelStats_;
+cache/cpuController.h:		CacheStats *totalKernelStats_;
+cache/mesiCache.h:                CacheStats *userStats_;
+cache/mesiCache.h:                CacheStats *totalUserStats_;
+cache/mesiCache.h:                CacheStats *kernelStats_;
+cache/mesiCache.h:                CacheStats *totalKernelStats_;
+sim/ptlsim.cpp:  struct CacheStats::cpurequest::count &count_L1I = stats->memory.total.L1I.cpurequest.count;
+sim/ptlsim.cpp:  struct CacheStats::cpurequest::count &count_L1D = stats->memory.total.L1D.cpurequest.count;
+sim/ptlsim.cpp:  struct CacheStats::cpurequest::count &count_L2 = stats->memory.total.L2.cpurequest.count;
+stats/stats.h:using Memory::CacheStats;
+stats/stats.h:using Memory::PerCoreCacheStats;
+stats/stats.h:#define per_dcache_stats_ref(coreid) (*(((DataCacheStats*)&stats->dcache.c0) + (coreid)))
+stats/stats.h:#define per_context_dcache_stats_ref(coreid, threadid) (*(((PerContextDataCacheStats*)&(per_dcache_stats_ref(coreid).vcpu0)) + (threadid)))
+stats/stats.h:#define per_core_cache_stats_ref(coreid) (*(((PerCoreCacheStats*)&stats->memory.c0) + (coreid)))
+stats/stats.h:#define per_core_cache_stats_ref_with_stats(st, coreid) (*(((PerCoreCacheStats*)&st.memory.c0) + (coreid)))
+stats/stats.h:  //  DataCacheStats dcache;
+stats/stats.h:    DataCacheStats total;
+stats/stats.h:    DataCacheStats c0;
+stats/stats.h:    DataCacheStats c1;
+stats/stats.h:    DataCacheStats c2;
+stats/stats.h:    DataCacheStats c3;
+stats/stats.h:    DataCacheStats c4;
+stats/stats.h:    DataCacheStats c5;
+stats/stats.h:    DataCacheStats c6;
+stats/stats.h:    DataCacheStats c7;
+stats/stats.h://     DataCacheStats c8;
+stats/stats.h://     DataCacheStats c9;
+stats/stats.h://     DataCacheStats c10;
+stats/stats.h://     DataCacheStats c11;
+stats/stats.h://     DataCacheStats c12;
+stats/stats.h://     DataCacheStats c13;
+stats/stats.h://     DataCacheStats c14;
+stats/stats.h://     DataCacheStats c15;
+stats/stats.h://	  PerCoreCacheStats total;
+stats/stats.h://	  PerCoreCacheStats cacheStats[10];
+stats/stats.h:    PerCoreCacheStats total;
+stats/stats.h:    PerCoreCacheStats c0;
+stats/stats.h:    PerCoreCacheStats c1;
+stats/stats.h:    PerCoreCacheStats c2;
+stats/stats.h:    PerCoreCacheStats c3;
+stats/stats.h:    PerCoreCacheStats c4;
+stats/stats.h:    PerCoreCacheStats c5;
+stats/stats.h:    PerCoreCacheStats c6;
+stats/stats.h:    PerCoreCacheStats c7;
+stats/stats.h://     PerCoreCacheStats c8;
+stats/stats.h://     PerCoreCacheStats c9;
+stats/stats.h://     PerCoreCacheStats c10;
+stats/stats.h://     PerCoreCacheStats c11;
+stats/stats.h://     PerCoreCacheStats c12;
+stats/stats.h://     PerCoreCacheStats c13;
+stats/stats.h://     PerCoreCacheStats c14;
+stats/stats.h://     PerCoreCacheStats c15;

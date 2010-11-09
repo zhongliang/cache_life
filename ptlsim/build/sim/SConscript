@@ -1,0 +1,15 @@
+# SConscript for cache subdirectory
+
+# Import envrionment
+Import('env')
+
+# Now get list of .cpp files
+src_files = Glob('*.cpp')
+
+objs = env.Object(src_files)
+
+# dstbuild objects
+dst_objs = env.Object(Split("syscalls.cpp config-parser.cpp"))
+
+ret_objs = [objs, dst_objs]
+Return('ret_objs')

@@ -1,0 +1,128 @@
+# Top level SConstruct file for lib_mptlsim
+
+import os
+import platform
+
+# List of subdirectories where we have source code
+dirs = ['cache', 'core', 'lib', 'sim', 'stats', 'tools', 'x86']
+
+try:
+	Import('ptl_env')
+	env = ptl_env
+	qemu_dir = env['qemu_dir']
+except:
+	env = Environment()
+	env['CC'] = 'g++'
+	qemu_dir = "%s/../qemu" % os.getcwd()
+
+# Setup the environment
+# env = Environment()
+
+# Include all the subdirectories into the CCFLAGS
+env['CPPPATH'] = []
+for dir in dirs:
+    env['CPPPATH'].append(os.getcwd() + "/" + dir)
+
+env['CPPPATH'].append(qemu_dir)
+env['CPPPATH'].append("%s/%s" % (qemu_dir, "target-i386"))
+env['CPPPATH'].append("%s/%s" % (qemu_dir, "fpu"))
+env['CPPPATH'].append("%s/%s" % (qemu_dir, "x86_64-softmmu"))
+
+optimization_defs = '-fno-trapping-math -fno-stack-protector -fno-exceptions '
+optimization_defs += '-fno-rtti -funroll-loops -fno-strict-aliasing '
+
+debug = ARGUMENTS.get('debug', 0)
+if int(debug):
+    env.Append(CCFLAGS = '-g')
+    env.Append(CCFLAGS = '-O')
+else:
+    env.Append(CCFLAGS = '-g3')
+    env.Append(CCFLAGS = '-O3 -march=native -mtune=native')
+    # env.Append(CCFLAGS = '-DDISABLE_ASSERT')
+    env.Append(CCFLAGS = '-DDISABLE_LOGGING')
+    env.Append(CCFLAGS = optimization_defs)
+
+num_sim_cores = ARGUMENTS.get('c', 1)
+env.Append(CCFLAGS = '-DNUM_SIM_CORES=%d' % int(num_sim_cores))
+if int(num_sim_cores) == 1:
+    env.Append(CCFLAGS = '-DSINGLE_CORE_MEM_CONFIG')
+
+
+# Set all the -D flags
+env.Append(CCFLAGS = '-DNEED_CPU_H')
+env.Append(CCFLAGS = '-D__STDC_FORMAT_MACROS')
+env.Append(CCFLAGS = '-DMARSS_QEMU')
+
+# To use AMD ooocore file uncomment this
+# env.Append(CCFLAGS = '-DUSE_AMD_OOOCORE')
+
+# Check for 64bit machine
+arch_type = platform.architecture()[0]
+if arch_type == '64bit':
+    env.Append(CCFLAGS = '-D__x86_64__')
+
+Export('env')
+
+# print("Build Envrionment:")
+# print("\tCC:%s" % env['CC'])
+# print("\tCCFLAGS:%s" % env['CCFLAGS'])
+# print("\tCPPPATH:%s" % env['CPPPATH'])
+
+# Setup the build directory
+
+# Now call the SConscript in all subdirectories to build object files
+objs = []
+dst_objs = []
+for dir in dirs:
+	# Skip the Tools directory
+    if dir == "tools":
+        continue
+    o = SConscript('%s/SConscript' % dir, variant_dir='build/%s' % dir)
+    if type(o) == list:
+        objs.append(o[0])
+        dst_objs.append(o[1])
+    else:
+        objs.append(o)
+
+# Build ptlsim.dst.o
+inc_str = ""
+for i_s in env['CPPPATH']:
+    inc_str += " -I%s" % i_s
+env['incstr'] = inc_str
+dst_script = "%s/tools/dstbuild.py" % os.getcwd()
+st_i = env.Command('build/stats.i', 'stats/stats.h',
+        "$CXX $CCFLAGS $incstr -E -C $SOURCE > $TARGET")
+dst_tmp_cpp = env.Command('build/dstbuild.temp.cpp', st_i,
+        "%s $SOURCE PTLsimStats > $TARGET" % dst_script)
+dst_tmp = env.Program('build/dstbuild.temp',
+        dst_objs + ["build/dstbuild.temp.cpp"],
+        CCFLAGS = env['CCFLAGS'] + " -DDSTBUILD -include stats.h")
+ptl_dst = env.Command('build/ptlsim.dst', dst_tmp,
+        "./$SOURCE $TARGET")
+ptl_dst_o = env.Command('build/ptlsim.dst.o', ptl_dst,
+        "objcopy -I binary -O elf64-x86-64 -B i386 --rename-section "+
+        ".data=.dst,alloc,load,readonly,data,contents $SOURCE $TARGET")
+
+# Build Tools
+dst_objs.append(ptl_dst_o)
+Export('dst_objs')
+SConscript('tools/SConscript', variant_dir='build/tools')
+
+Depends(dst_tmp_cpp, dst_script)
+Requires(st_i, '../qemu/config-host.h')
+Requires(st_i, '../qemu/x86_64-softmmu/config-target.h')
+Requires(dst_tmp_cpp, st_i)
+Requires(dst_tmp, dst_tmp_cpp)
+
+dst_bson_script = "%s/tools/dstbuild_bson.py" % os.getcwd()
+dst_bson_tmp_cpp = env.Command('build/bson_stats.cpp', st_i,
+        "%s $SOURCE PTLsimStats > $TARGET" % dst_bson_script)
+dst_bson_obj = env.Object(dst_bson_tmp_cpp,
+        CCFLAGS = env['CCFLAGS'] + " -DDSTBUILD -include stats.h")
+
+Depends(dst_bson_tmp_cpp, [dst_script, st_i])
+
+#lib = env.Library('build/libmptlsim', objs + ptl_dst_o)
+lib = objs + ptl_dst_o + dst_bson_obj
+
+Return('lib')

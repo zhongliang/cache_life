@@ -1,0 +1,722 @@
+file /home/marss86/marss/qemu/SConfigure,line 332:
+	Configure(confdir = .sconf_temp)
+scons: Configure: Checking whether the C++ compiler works
+scons: Configure: ".sconf_temp/conftest_0.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_0.cpp <-
+  |  |
+  |  |int main()
+  |  |{
+  |  |    return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_0.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_0.cpp[0m
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: ".sconf_temp/conftest_1.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_1.cpp <-
+  |  |
+  |  |int main(void) {return 0;}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_1.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_1.cpp[0m
+  |
+scons: Configure: ".sconf_temp/conftest_1" is up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_1[0m
+  |
+scons: Configure: ".sconf_temp/conftest_2.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_2.cpp <-
+  |  |
+  |  |    #if !defined(__i386__)
+  |  |    #error Not Define
+  |  |    #endif
+  |  |    int main(void) { return 0; }
+  |  |    
+  |
+scons: Configure: Building ".sconf_temp/conftest_2.o" failed in a previous run and all its sources are up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_2.cpp[0m
+  |
+scons: Configure: no
+
+scons: Configure: ".sconf_temp/conftest_3.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_3.cpp <-
+  |  |
+  |  |    #if !defined(__x86_64__)
+  |  |    #error Not Define
+  |  |    #endif
+  |  |    int main(void) { return 0; }
+  |  |    
+  |
+scons: Configure: ".sconf_temp/conftest_3.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_3.cpp[0m
+  |
+scons: Configure: ".sconf_temp/conftest_3" is up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_3[0m
+  |
+scons: Configure: yes
+
+scons: Configure: ".sconf_temp/conftest_4.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_4.cpp <-
+  |  |
+  |  |    #if !defined(__linux__)
+  |  |    #error Not Define
+  |  |    #endif
+  |  |    int main(void) { return 0; }
+  |  |    
+  |
+scons: Configure: ".sconf_temp/conftest_4.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_4.cpp[0m
+  |
+scons: Configure: ".sconf_temp/conftest_4" is up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_4[0m
+  |
+scons: Configure: yes
+
+scons: Configure: ".sconf_temp/conftest_5.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_5.cpp <-
+  |  |
+  |  |    #include <sched.h>
+  |  |    #include <linux/futex.h>
+  |  |    void foo() {
+  |  |    #if !defined(CLONE_SETTLS) || !defined(FUTEX_WAIT)
+  |  |    #error bork
+  |  |    #endif
+  |  |    }
+  |  |    
+  |
+scons: Configure: ".sconf_temp/conftest_5.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_5.cpp[0m
+  |
+scons: Configure: Building ".sconf_temp/conftest_5" failed in a previous run and all its sources are up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_5[0m
+  |
+scons: Configure: no
+
+scons: Configure: Checking for C library z... 
+scons: Configure: ".sconf_temp/conftest_6.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_6.c <-
+  |  |
+  |  |
+  |  |#include "zlib.h"
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_6.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_6.c[0m
+  |
+scons: Configure: ".sconf_temp/conftest_6" is up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_6[0m
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: ".sconf_temp/conftest_7.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_7.cpp <-
+  |  |
+  |  |    #include <SDL.h>
+  |  |    #if defined(SDL_VIDEO_DRIVER_X11)
+  |  |    #include <X11/XKBlib.h>
+  |  |    #else
+  |  |    #error No X11 support
+  |  |    #endif
+  |  |    int main(void) {return 0;}
+  |  |    
+  |
+scons: Configure: ".sconf_temp/conftest_7.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_7.cpp[0m
+  |
+scons: Configure: ".sconf_temp/conftest_7" is up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_7[0m
+  |
+scons: Configure: yes
+
+scons: Configure: Checking for C library X11... 
+scons: Configure: ".sconf_temp/conftest_8.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_8.c <-
+  |  |
+  |  |
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_8.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_8.c[0m
+  |
+scons: Configure: ".sconf_temp/conftest_8" is up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_8[0m
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: ".sconf_temp/conftest_9.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_9.cpp <-
+  |  |
+  |  |    #include <fnmatch.h>
+  |  |    int main(void)
+  |  |    {
+  |  |        fnmatch("foo", "foo", 0);
+  |  |        return 0;
+  |  |    }
+  |  |    
+  |
+scons: Configure: ".sconf_temp/conftest_9.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_9.cpp[0m
+  |
+scons: Configure: ".sconf_temp/conftest_9" is up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_9[0m
+  |
+scons: Configure: ".sconf_temp/conftest_9.out" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_9 > .sconf_temp/conftest_9.out
+  |
+scons: Configure: yes
+
+scons: Configure: Checking for C library vdeplug... 
+scons: Configure: ".sconf_temp/conftest_10.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_10.c <-
+  |  |
+  |  |
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_10.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_10.c[0m
+  |
+scons: Configure: Building ".sconf_temp/conftest_10" failed in a previous run and all its sources are up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_10[0m
+  |
+scons: Configure: (cached) no
+
+scons: Configure: ".sconf_temp/conftest_11.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_11.cpp <-
+  |  |
+  |  |    #include <brlapi.h>
+  |  |    int main(void) { return brlapi_openConnection(NULL, NULL, NULL); }
+  |  |    
+  |
+scons: Configure: Building ".sconf_temp/conftest_11.o" failed in a previous run and all its sources are up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_11.cpp[0m
+  |
+scons: Configure: no
+
+scons: Configure: Checking for C library curses... 
+scons: Configure: ".sconf_temp/conftest_12.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_12.c <-
+  |  |
+  |  |
+  |  |#include "curses.h"
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_12.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_12.c[0m
+  |
+scons: Configure: ".sconf_temp/conftest_12" is up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_12[0m
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C library pthread... 
+scons: Configure: ".sconf_temp/conftest_13.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_13.c <-
+  |  |
+  |  |
+  |  |#include "pthread.h"
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_13.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_13.c[0m
+  |
+scons: Configure: ".sconf_temp/conftest_13" is up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_13[0m
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: ".sconf_temp/conftest_14.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_14.cpp <-
+  |  |
+  |  |    #include <sys/types.h>
+  |  |    #include <sys/uio.h>
+  |  |    #include <unistd.h>
+  |  |    int main(void) { struct iovec iov; return 0; }
+  |  |    
+  |
+scons: Configure: ".sconf_temp/conftest_14.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_14.cpp[0m
+  |
+scons: Configure: ".sconf_temp/conftest_14" is up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_14[0m
+  |
+scons: Configure: yes
+
+scons: Configure: Checking for C library fdt... 
+scons: Configure: ".sconf_temp/conftest_15.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_15.c <-
+  |  |
+  |  |
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_15.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_15.c[0m
+  |
+scons: Configure: Building ".sconf_temp/conftest_15" failed in a previous run and all its sources are up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_15[0m
+  |
+scons: Configure: (cached) no
+
+scons: Configure: ".sconf_temp/conftest_16.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_16.cpp <-
+  |  |
+  |  |    #include <sys/types.h>
+  |  |    #include <sys/uio.h>
+  |  |    #include <unistd.h>
+  |  |    int main(void) { preadv; }
+  |  |    
+  |
+scons: Configure: ".sconf_temp/conftest_16.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_16.cpp[0m
+  |
+scons: Configure: ".sconf_temp/conftest_16" is up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_16[0m
+  |
+scons: Configure: yes
+
+scons: Configure: ".sconf_temp/conftest_17.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_17.cpp <-
+  |  |
+  |  |    #define _ATFILE_SOURCE
+  |  |    #include <sys/types.h>
+  |  |    #include <fcntl.h>
+  |  |    #include <unistd.h>
+  |  |
+  |  |    int
+  |  |    main(void)
+  |  |    {
+  |  |        /* try to unlink nonexisting file */
+  |  |        return (unlinkat(AT_FDCWD, "nonexistent_file", 0));
+  |  |    }
+  |  |    
+  |
+scons: Configure: ".sconf_temp/conftest_17.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_17.cpp[0m
+  |
+scons: Configure: ".sconf_temp/conftest_17" is up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_17[0m
+  |
+scons: Configure: yes
+
+scons: Configure: ".sconf_temp/conftest_18.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_18.cpp <-
+  |  |
+  |  |    #include <sys/inotify.h>
+  |  |
+  |  |    int
+  |  |    main(void)
+  |  |    {
+  |  |        /* try to start inotify */
+  |  |        return inotify_init();
+  |  |    }
+  |  |    
+  |
+scons: Configure: ".sconf_temp/conftest_18.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_18.cpp[0m
+  |
+scons: Configure: ".sconf_temp/conftest_18" is up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_18[0m
+  |
+scons: Configure: yes
+
+scons: Configure: ".sconf_temp/conftest_19.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_19.cpp <-
+  |  |
+  |  |    #define _ATFILE_SOURCE
+  |  |    #define _GNU_SOURCE
+  |  |    #include <stddef.h>
+  |  |    #include <fcntl.h>
+  |  |
+  |  |    int main(void)
+  |  |    {
+  |  |        utimensat(AT_FDCWD, "foo", NULL, 0);
+  |  |        futimens(0, NULL);
+  |  |        return 0;
+  |  |    }
+  |  |    
+  |
+scons: Configure: Building ".sconf_temp/conftest_19.o" failed in a previous run and all its sources are up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_19.cpp[0m
+  |
+scons: Configure: no
+
+scons: Configure: ".sconf_temp/conftest_20.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_20.cpp <-
+  |  |
+  |  |    #define _GNU_SOURCE
+  |  |    #include <unistd.h>
+  |  |    #include <fcntl.h>
+  |  |
+  |  |    int main(void)
+  |  |    {
+  |  |        int pipefd[2];
+  |  |        pipe2(pipefd, O_CLOEXEC);
+  |  |        return 0;
+  |  |    }
+  |  |    
+  |
+scons: Configure: ".sconf_temp/conftest_20.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_20.cpp[0m
+  |
+scons: Configure: ".sconf_temp/conftest_20" is up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_20[0m
+  |
+scons: Configure: yes
+
+scons: Configure: ".sconf_temp/conftest_21.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_21.cpp <-
+  |  |
+  |  |    #define _GNU_SOURCE
+  |  |    #include <sys/socket.h>
+  |  |    #include <stddef.h>
+  |  |
+  |  |    int main(void)
+  |  |    {
+  |  |        accept4(0, NULL, NULL, SOCK_CLOEXEC);
+  |  |        return 0;
+  |  |    }
+  |  |    
+  |
+scons: Configure: ".sconf_temp/conftest_21.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_21.cpp[0m
+  |
+scons: Configure: ".sconf_temp/conftest_21" is up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_21[0m
+  |
+scons: Configure: yes
+
+scons: Configure: ".sconf_temp/conftest_22.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_22.cpp <-
+  |  |
+  |  |    #define _GNU_SOURCE
+  |  |    #include <unistd.h>
+  |  |    #include <fcntl.h>
+  |  |    #include <limits.h>
+  |  |
+  |  |    int main(void)
+  |  |    {
+  |  |        int len, fd;
+  |  |        len = tee(STDIN_FILENO, STDOUT_FILENO, INT_MAX, SPLICE_F_NONBLOCK);
+  |  |        splice(STDIN_FILENO, NULL, fd, NULL, len, SPLICE_F_MOVE);
+  |  |        return 0;
+  |  |    }
+  |  |    
+  |
+scons: Configure: ".sconf_temp/conftest_22.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_22.cpp[0m
+  |
+scons: Configure: ".sconf_temp/conftest_22" is up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_22[0m
+  |
+scons: Configure: yes
+
+scons: Configure: ".sconf_temp/conftest_23.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_23.cpp <-
+  |  |
+  |  |    #include <sys/eventfd.h>
+  |  |    int main(void)
+  |  |    {
+  |  |        int efd = eventfd(0, 0);
+  |  |        return 0;
+  |  |    }
+  |  |    
+  |
+scons: Configure: ".sconf_temp/conftest_23.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_23.cpp[0m
+  |
+scons: Configure: ".sconf_temp/conftest_23" is up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_23[0m
+  |
+scons: Configure: yes
+
+scons: Configure: ".sconf_temp/conftest_24.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_24.cpp <-
+  |  |
+  |  |    #include <fcntl.h>
+  |  |
+  |  |    int main(void)
+  |  |    {
+  |  |        fallocate(0, 0, 0, 0);
+  |  |        return 0;
+  |  |    }
+  |  |    
+  |
+scons: Configure: ".sconf_temp/conftest_24.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_24.cpp[0m
+  |
+scons: Configure: ".sconf_temp/conftest_24" is up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_24[0m
+  |
+scons: Configure: yes
+
+scons: Configure: ".sconf_temp/conftest_25.cpp" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_25.cpp <-
+  |  |
+  |  |    #include <unistd.h>
+  |  |    int main(void)
+  |  |    {
+  |  |        dup3(0, 0, 0);
+  |  |        return 0;
+  |  |    }
+  |  |    
+  |
+scons: Configure: ".sconf_temp/conftest_25.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_25.cpp[0m
+  |
+scons: Configure: ".sconf_temp/conftest_25" is up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_25[0m
+  |
+scons: Configure: yes
+
+scons: Configure: Checking for C header file signal.h... 
+scons: Configure: ".sconf_temp/conftest_26.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_26.c <-
+  |  |
+  |  |#include "signal.h"
+  |  |
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_26.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_26.c[0m
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C header file time.h... 
+scons: Configure: ".sconf_temp/conftest_27.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_27.c <-
+  |  |
+  |  |#include "time.h"
+  |  |
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_27.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_27.c[0m
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C library rt... 
+scons: Configure: ".sconf_temp/conftest_28.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_28.c <-
+  |  |
+  |  |
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_28.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_28.c[0m
+  |
+scons: Configure: ".sconf_temp/conftest_28" is up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_28[0m
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C function fdatasync()... 
+scons: Configure: ".sconf_temp/conftest_29.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_29.c <-
+  |  |
+  |  |
+  |  |#include <assert.h>
+  |  |
+  |  |#ifdef __cplusplus
+  |  |extern "C"
+  |  |#endif
+  |  |char fdatasync();
+  |  |
+  |  |int main() {
+  |  |#if defined (__stub_fdatasync) || defined (__stub___fdatasync)
+  |  |  fail fail fail
+  |  |#else
+  |  |  fdatasync();
+  |  |#endif
+  |  |
+  |  |  return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_29.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_29.c[0m
+  |
+scons: Configure: ".sconf_temp/conftest_29" is up to date.
+scons: Configure: The original builder output was:
+  |[91mLinking Program [95m==> [93m.sconf_temp/conftest_29[0m
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C library sasl... 
+scons: Configure: ".sconf_temp/conftest_30.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_30.c <-
+  |  |
+  |  |
+  |  |#include "sasl.h"
+  |  |
+  |  |int
+  |  |main() {
+  |  |  
+  |  |return 0;
+  |  |}
+  |  |
+  |
+scons: Configure: Building ".sconf_temp/conftest_30.o" failed in a previous run and all its sources are up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_30.c[0m
+  |
+scons: Configure: (cached) no
+
+scons: Configure: Checking for C header file byteswap.h... 
+scons: Configure: ".sconf_temp/conftest_31.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_31.c <-
+  |  |
+  |  |#include "byteswap.h"
+  |  |
+  |  |
+  |
+scons: Configure: ".sconf_temp/conftest_31.o" is up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_31.c[0m
+  |
+scons: Configure: (cached) yes
+
+scons: Configure: Checking for C header file machine/bswap.h... 
+scons: Configure: ".sconf_temp/conftest_32.c" is up to date.
+scons: Configure: The original builder output was:
+  |.sconf_temp/conftest_32.c <-
+  |  |
+  |  |#include "machine/bswap.h"
+  |  |
+  |  |
+  |
+scons: Configure: Building ".sconf_temp/conftest_32.o" failed in a previous run and all its sources are up to date.
+scons: Configure: The original builder output was:
+  |[94mCompiling [95m==> [93m.sconf_temp/conftest_32.c[0m
+  |
+scons: Configure: (cached) no
+
